@@ -7,6 +7,6 @@
         <package name="com.wxj.pojo"/>
     </typeAliases>
     <mappers>
-        <mapper class="com.wxj.dao.BookMapper.xml"/>
+        <mapper resource="com/wxj/dao/BookMapper.xml"/>
     </mappers>
 </configuration>

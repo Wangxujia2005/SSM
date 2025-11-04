@@ -4,37 +4,36 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.wxj.dao.BookMapper">
-<!--增加一个book-->
+    <!--增加一个book-->
     <insert id="addBook" parameterType="Books">
         insert into ssmbuild.books(bookName,bookCounts,detail)
-        values(#{bookName},#{bookCount},#{detail});
+        values(#{bookName},#{bookCounts},#{detail});
     </insert>
 
-<!--根据id删掉一个book-->
-    <delete id="deleteBookById" parameterType="int">
+    <!--根据id删掉一个book-->
+    <delete id="deleteBookByID" parameterType="int">
         delete from ssmbuild.books where bookID=#{bookID}
     </delete>
 
-<!--根据id更新book-->
+    <!--根据id更新book-->
     <update id="updateBook" parameterType="Books">
         update ssmbuild.books
-        set bookName=#{bookName},bookCounts=#{bookCount},detail=#{detail}
+        set bookName=#{bookName},bookCounts=#{bookCounts},detail=#{detail}
         where bookID=#{bookID}
     </update>
 
-<!--根据id查询-->
-    <select id="queryBookById" resultType="Books">
+    <!--根据id查询-->
+    <select id="queryBookByID" resultType="Books">
         select * from ssmbuild.books where bookID=#{bookID}
     </select>
 
-<!--查询全部Book-->
+    <!--查询全部Book-->
     <select id="queryAllBook" resultType="Books">
         select * from ssmbuild.books
     </select>
 
-<!--根据name查询book-->
+    <!--根据name查询book-->
     <select id="queryBookByName" resultType="Books">
         select * from ssmbuild.books where bookName=#{bookName}
     </select>
-
 </mapper>
