@@ -11,8 +11,10 @@
        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- 自动扫描指定的包，下面所有注解类交给IOC容器管理 -->
-    <context:component-scan base-package="com.wang.controller"/>
+    <context:component-scan base-package="com.wxj.controller"/>
+    <!-- 静态资源过滤 -->
     <mvc:default-servlet-handler />
+    <mvc:annotation-driven />
 
     <!-- 视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -23,7 +25,7 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
-    <!-- ✅ 只保留一个 mvc:annotation-driven，并配置 JSON 乱码问题 -->
+    <!-- JSON乱码问题 -->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -38,5 +40,17 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <!--关于拦截器的配置-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--/** 包括路径及其子路径-->
+            <!--/admin/* 拦截的是/admin/add等等这种 , /admin/add/user不会被拦截-->
+            <!--/admin/** 拦截的是/admin/下的所有-->
+            <mvc:mapping path="/**"/>
+            <!--bean配置的就是拦截器-->
+            <bean class="com.wxj.interceptor.Interceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 </beans>

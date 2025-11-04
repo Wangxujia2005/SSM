@@ -13,6 +13,7 @@
       <module>springmvc-04-json</module>
       <module>ssmbuild</module>
     <module>springmvc-05-ajax</module>
+      <module>springmvc-07-Interceptor</module>
 
   </modules>
 
