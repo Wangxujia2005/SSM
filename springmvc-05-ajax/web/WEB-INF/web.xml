@@ -10,7 +10,7 @@
         <!--通过初始化参数指定SpringMVC配置文件的位置，进行关联-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springmvc-servlet.xml</param-value>
+            <param-value>classpath:applicationContext.xml</param-value>
         </init-param>
         <!-- 启动顺序，数字越小，启动越早 -->
         <load-on-startup>1</load-on-startup>
