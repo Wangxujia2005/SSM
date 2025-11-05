@@ -14,6 +14,7 @@
       <module>ssmbuild</module>
     <module>springmvc-05-ajax</module>
       <module>springmvc-07-Interceptor</module>
+    <module>springmvc-06-file</module>
 
   </modules>
 
@@ -47,6 +48,22 @@
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
+    </dependency>
+    <!-- 添加Jackson依赖，解决500异常-->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.13.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.13.5</version>
     </dependency>
   </dependencies>
 
